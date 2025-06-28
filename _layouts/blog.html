@@ -1,13 +1,27 @@
 ---
-layout: default
+layout: main
 ---
+<section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-16 md:py-24 rounded-b-3xl shadow-xl">
+    <div class="container mx-auto px-4 text-center">
+        <!-- Main Blog Title -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase mb-3 leading-tight">
+            The Blog
+        </h1>
+        <!-- Subtitle/Description for the blog page -->
+        <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
+            Dive into my latest thoughts, tutorials, and insights on software development.
+        </p>
+    </div>
+</section>
 
-<div class="w-4/5 dark:bg-white/5 rounded-xl dark:text-white m-auto dark:backdrop-blur-2xl mt-13 mb-25 p-4">
-    <h2 class="text-6xl text-blue-800 dark:text-white uppercase mb-3">Blog</h2>
-    <p class="text-md">Find all posts</p>
-    
-</div>
-<div class="w-4/5 m-auto dark:text-white mt-3 p-4">
-    {{content}}
-    
-</div>
+<!-- Main Blog Content Area -->
+<!-- This section will contain your Jekyll post list or individual post content -->
+<section class="py-12 md:py-16 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+        <!-- This `div` will hold your Jekyll `{{ content }}` (e.g., list of posts or a single post) -->
+        <!-- Adding a white background and shadow to make the content area stand out -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-10 lg:p-12 text-gray-800 dark:text-gray-200">
+            {{ content }}
+        </div>
+    </div>
+</section>
