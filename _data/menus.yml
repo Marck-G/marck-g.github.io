@@ -1,0 +1,9 @@
+main:
+  - url: /
+    title: Home
+  - url: /blog
+    title: Blog
+  - url: /about
+    title: About
+  - url: /cv
+    title: CV
