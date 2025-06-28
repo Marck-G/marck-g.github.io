@@ -69,3 +69,29 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+author:
+  name: Marck D. Carrión Guzmán
+  specialty: Java Senior Developer
+  interests_summary: Discover new applications of the programming area
+  hobby_summary: trainning or playing any instrument
+skills:
+  - name: JavaScript
+    icon: fa-js
+  - name: Python
+    icon: fa-python
+  - name: React
+    icon: fa-react
+  - name: Node.js
+    icon: fa-node-js
+  - name: Docker
+    icon: fa-docker
+  - name: AWS
+    icon: fa-aws
+  - name: Java
+    icon: fa-java
+  - name: Git
+    icon: fa-git
+
+github_username: Marck-G # Replace with your GitHub username
+# twitter_username: yourtwitterhandle # Replace with your Twitter handle (optional)
+linkedin_username: marck-carrion
