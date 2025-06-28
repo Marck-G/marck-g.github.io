@@ -48,7 +48,7 @@
 
                 </button>
                 <div class="flex flex-col flex-wrap content-center mt-3 dark:text-white font-bold">
-                                {% for page in site.menus.main %}
+                                {% for page in site.pages %}
                     <a class="block pt-3 pb-3 pr-6 pl-10 bg-gray border-b-1 dark:border-slate-400 w-full
                     hover:shadow-md 
                      mb-3 hover:bg-slate-400/30 activate:bg-slate-400/30"
@@ -108,7 +108,7 @@
         <!-- /Theme button -->
         <!-- md Menu -->
         <div class="inline-block mr-10 group/nav">
-            {% for page in site.menus.main %}
+            {% for page in site.pages %}
             <a href="{{page.url}}" class="inline-block text-slate-800 p-3 hover:text-blue-800 hover:underline decoration-4 underline-offset-8">
                 {{page.title}}
             </a>

@@ -1,5 +1,7 @@
 ---
 layout: blog
+title: Blog
+permalink: /blog/
 ---
 
 <div class="flex flex-row flex-wrap w-full justify-between">
