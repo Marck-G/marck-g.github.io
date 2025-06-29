@@ -72,21 +72,6 @@ title: Home
 <section class="py-16 md:py-20 bg-gray-100">
     <div class="container mx-auto px-4">
         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">What I Build & Write About</h2>
-        {% comment %}
-            To use this section, create a _data/skills.yml file like this:
-            - name: JavaScript
-              icon: fa-js
-            - name: Python
-              icon: fa-python
-            - name: React
-              icon: fa-react
-            - name: Node.js
-              icon: fa-node-js
-            - name: Docker
-              icon: fa-docker
-            - name: AWS
-              icon: fa-aws
-        {% endcomment %}
         {% if site.skills %}
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-4xl mx-auto">
             {% for skill in site.skills %}
