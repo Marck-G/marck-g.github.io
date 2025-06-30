@@ -2,6 +2,7 @@
 layout: post
 title:  "Build Your Own Native Library for Java with Rust and J4RS"
 date:   2025-06-20 10:50:39 +0200
+image: /assets/img/java-rust.png
 excerpt_separator: <!--more-->
 lang: en
 categories: lowlevel development tutorial
@@ -67,7 +68,7 @@ public class MyJavaApp {
 <strong>Generating C/C++ Header Files:</strong>: Historically, after compiling your Java class, you'd use the <code class="bg-gray-100 px-1 rounded text-red-700 py-1">javah</code> tool (now often integrated into compilers like  <code class="bg-gray-100 px-1 rounded text-red-700 py-1">javac</code> r IDEs) to generate a C/C++ header file ( <code class="bg-gray-100 px-1 rounded text-red-700 py-1">.h</code> ). This header file would contain the exact function signatures that your native implementation needs to adhere to, ensuring compatibility with the Java method.
 </li>
 <li>
-<strong>Implementing Native Methods</strong>: You then write the actual implementation of these functions in C or C++. These implementations receive special JNI types (like  <code class="bg-gray-100 px-1 rounded text-red-700 py-1">JNIEnv*</code>
+<strong>Implementing Native Methods</strong>: You then write the actual implementation of these functions in C or C++. These implementations receive special JNI types (like  <code class="bg-gray-100 px-1 rounded text-red-700 py-1">JNIEnv*</code>, <code class="bg-gray-100 px-1 rounded text-red-700 py-1">jobject</code> for Java objects or <code class="bg-gray-100 px-1 rounded text-red-700 py-1">jstring</code> for strings)
 
 <pre class="my-2">
 <code class="language-c bg-gray-800 text-white p-3 rounded text-sm overflow-x-auto mt-2">
