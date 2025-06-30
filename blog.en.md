@@ -1,11 +1,12 @@
 ---
 layout: blog
 title: Blog
-permalink: /blog/
+<!-- permalink: /blog/ -->
+lang: en
 ---
 
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    {% for post in site.posts %}
+   {% for post in site.posts %}
     <div
         class="bg-gray-50 dark:bg-gray-900 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col">
         <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3">

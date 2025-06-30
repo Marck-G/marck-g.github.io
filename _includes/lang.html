@@ -1,0 +1,31 @@
+<div class="relative inline-block text-left" x-data="{ open: false }">
+    <!-- Botón del idioma actual -->
+    <button @click="open = !open" type="button"
+        class="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+        id="lang-menu-button" aria-expanded="true" aria-haspopup="true">
+        {{ site.active_lang | upcase }}
+        <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </button>
+
+
+    <!-- Dropdown -->
+    <div x-show="open" @click.away="open = false"
+        class="origin-top-right absolute right-0 mt-2 w-32 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50"
+        role="menu" aria-orientation="vertical" aria-labelledby="lang-menu-button">
+        <div class="py-1" role="none">
+
+
+
+            {% for tongue in site.languages %}
+            <a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 {% if lang == site.active_lang %}font-bold{% endif %}"
+                role="menuitem" {% if tongue==site.active_lang %}style="font-weight: bold;" {% endif %} {% static_href
+                %}href="{% if tongue == site.default_lang %}{{site.baseurl}}{{page.url}}{% else %}{{site.baseurl}}/{{ tongue }}{{page.url}}{% endif %}"
+                {% endstatic_href %}>{{ tongue }}</a>{%- if forloop.last == false -%}{{" "}}{{ site.langsep }}{%- endif
+            -%}
+            {% endfor %}
+        </div>
+    </div>
+</div>

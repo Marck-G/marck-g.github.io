@@ -3,19 +3,21 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: main
 title: Home
+lang: es
+page_id: index
 ---
 
 <!-- Hero Section -->
 <section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-20 md:py-28 rounded-b-3xl shadow-xl">
     <div class="container mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
-            <span>{{ site.title }}</span><br>Coding Insights & Developer Adventures
+            <span>{{ site.title }}</span><br>Exploraciones de Código y Aventuras de Desarrollo
         </h1>
         <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8 opacity-90 animate-fade-in-up delay-100">
-            Hi, I'm <span class="font-semibold">{{ site.author.name }}</span>, a <span class="font-semibold">{{ site.author.specialty }}</span> passionate about building and sharing. On this blog, I break down complex topics into clear, actionable guides.
+            Hola, soy <span class="font-semibold">{{ site.author.name }}</span>, un <span class="font-semibold">{{ site.author.specialty }}</span> apasionado por construir y compartir. En este blog, desgloso temas complejos en guías claras y prácticas.
         </p>
         <a href="{{ '/blog/' | relative_url }}" class="button animate-fade-in-up delay-200">
-            Start Reading My Articles →
+            Lee Mis Artículos →
         </a>
         <div class="flex justify-center space-x-6 mt-8 animate-fade-in-up delay-300">
             {% if site.github_username %}
@@ -40,12 +42,18 @@ title: Home
 <!-- Latest Articles Section -->
 <section class="py-16 md:py-20 bg-gray-50">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Latest Articles</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Últimos Artículos</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% assign current_lang = site.active_lang %}
+
             {% for post in site.posts limit:3 %}
+     {% if post.lang == current_lang %}
+
             <article class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
                 {% comment %} Optional: Add a placeholder image if you want to feature images with posts {% endcomment %}
-                <!-- <img src="https://placehold.co/600x300/e0e0e0/333333?text=Post+Image" alt="Post Thumbnail" class="w-full h-48 object-cover"> -->
+                {% if post.image %}
+                <img src="{{post.image}}" alt="Post Thumbnail" class="w-full h-48 object-cover">
+                {% endif %}
                 <div class="p-6">
                     <h3 class="text-xl font-semibold text-gray-900 mb-2">
                         <a href="{{ post.url | relative_url }}" class="hover:text-blue-600 transition-colors duration-300">{{ post.title }}</a>
@@ -53,16 +61,17 @@ title: Home
                     <p class="text-sm text-gray-500 mb-4">{{ post.date | date: "%b %d, %Y" }}</p>
                     <p class="text-gray-700 leading-relaxed mb-4">{{ post.excerpt | strip_html | truncate: 150 }}</p>
                     <a href="{{ post.url | relative_url }}" class="text-blue-600 hover:text-blue-800 font-medium flex items-center">
-                        Read More
+                        Seguir leyendo
                         <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                     </a>
                 </div>
             </article>
+            {% endif %}
             {% endfor %}
         </div>
         <div class="text-center mt-12">
             <a href="{{ '/blog/' | relative_url }}" class="button secondary">
-                View All Posts
+                Todos los artículos
             </a>
         </div>
     </div>
@@ -71,7 +80,7 @@ title: Home
 <!-- Skills/Technologies Section -->
 <section class="py-16 md:py-20 bg-gray-100">
     <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">What I Build & Write About</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12">Qué Construyo y Sobre Qué Escribo</h2>
         {% if site.skills %}
         <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-4xl mx-auto">
             {% for skill in site.skills %}
@@ -98,10 +107,10 @@ title: Home
             <img src="https://avatars.githubusercontent.com/u/19915240?v=4" alt="{{ site.author.name }}" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-blue-600 shadow-md mb-6 md:mb-0 md:mr-8">
             <div>
                 <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                    I'm <span class="font-semibold">{{ site.author.name }}</span>, a <span class="font-semibold">{{ site.author.specialty }}</span> with a passion for <span class="font-semibold">{{ site.author.interests_summary }}</span>. When I'm not coding, you can find me <span class="font-semibold">{{ site.author.hobby_summary }}</span>.
+                    Soy <span class="font-semibold">{{ site.author.name }}</span>, un/a <span class="font-semibold">{{ site.author.specialty_es | default: site.author.specialty }}</span> centrado/a en el desarrollo de soluciones robustas y escalables. Mi trabajo se enfoca en la creación de software de impacto y en compartir conocimientos obtenidos de la experiencia práctica.
                 </p>
                 <a href="{{ '/about/' | relative_url }}" class="button">
-                    Learn More About My Journey
+                    Conoce Más Sobre Mi Trayectoria →
                 </a>
             </div>
         </div>

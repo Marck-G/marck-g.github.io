@@ -3,8 +3,10 @@ layout: post
 title:  "Build Your Own Native Library for Java with Rust and J4RS"
 date:   2025-06-20 10:50:39 +0200
 excerpt_separator: <!--more-->
+lang: en
 categories: lowlevel development tutorial
 tags: native java cerberus
+page_id: java-rust-j4rs
 ---
 
 Discover how to integrate the power and safety of Rust directly into your Java projects. In this post, we'll guide you step-by-stediv through creating a native library, using the J4RS framework for simdivle and efficient interoperability. Learn to leverage the best of both worlds to optimize your applications' performance and reliability.
