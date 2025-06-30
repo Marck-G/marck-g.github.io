@@ -5,11 +5,19 @@ layout: main
     <div class="container mx-auto px-4 text-center">
         <!-- Main Blog Title -->
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase mb-3 leading-tight">
+            {% if site.active_lang == "en" %}
             The Blog
+            {% elsif site.active_lang == "es" %}
+            El Blog
+            {% endif %}
         </h1>
         <!-- Subtitle/Description for the blog page -->
         <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto">
+            {% if site.active_lang == "en" %}
             Dive into my latest thoughts, tutorials, and insights on software development.
+            {% elsif site.active_lang == "es" %}
+            Sumérgete en mis últimas reflexiones, tutoriales y análisis sobre desarrollo de software.
+            {% endif %}
         </p>
     </div>
 </section>
@@ -18,7 +26,8 @@ layout: main
 <!-- This section will contain your Jekyll post list or individual post content -->
 <section class="py-12 md:py-16 bg-gray-50 dark:bg-gray-900">
     <div class="container mx-auto px-4">
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-10 lg:p-12 text-gray-800 dark:text-gray-200">
+        <div
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 md:p-10 lg:p-12 text-gray-800 dark:text-gray-200">
             {{ content }}
         </div>
     </div>

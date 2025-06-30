@@ -1,8 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ site.active_lang }}">
 
 <head>
     <meta charset="UTF-8">
+    {% seo %}
+    {% if site.languages.size > 1 %}
+    {% for lang in site.languages %}
+    {% assign href = site.baseurl | append: site.polyglot_link_map[lang][page.path] %}
+    <link rel="alternate" hreflang="{{ lang }}" href="{{ href | absolute_url }}">
+    {% endfor %}
+    {% endif %}
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
     <!-- Inter font from Google Fonts -->
@@ -18,6 +26,18 @@
             font-family: 'Inter', sans-serif;
             @apply bg-gray-50 text-gray-800;
             /* Default background and text color */
+        }
+
+        h1 {
+            @apply text-4xl font-bold text-gray-900 mb-4;
+        }
+
+        h2 {
+            @apply text-3xl font-semibold text-gray-800 mt-8 mb-4;
+        }
+
+        h3 {
+            @apply text-2xl font-semibold text-gray-700 mt-6 mb-3;
         }
 
         /* Style for code blocks, if you have any in your layout */
@@ -87,6 +107,7 @@
         import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
         mermaid.initialize({ startOnLoad: true });
     </script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </body>
 
 </html>

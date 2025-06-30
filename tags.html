@@ -7,10 +7,18 @@ permalink: /tags/
 <section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white py-16 md:py-24 rounded-b-3xl shadow-xl">
     <div class="container mx-auto px-4 text-center">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
+             {% if site.active_lang == "en" %}
             Blog Tags
+            {% elsif site.active_lang == "es" %}
+            Etiquetas del Blog
+            {% endif %}
         </h1>
         <p class="text-lg md:text-xl opacity-90 max-w-3xl mx-auto">
+             {% if site.active_lang == "en" %}
             Browse posts by keyword.
+            {% elsif site.active_lang == "es" %}
+            Busca post por palabras clave
+            {% endif %}
         </p>
     </div>
 </section>

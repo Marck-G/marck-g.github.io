@@ -49,6 +49,21 @@ defaults:
 plugins:
   - jekyll-feed
   - jekyll-menus
+  - jekyll-polyglot
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+languages: ["en", "es"]     # Idiomas que quieres soportar
+default_lang: "en"          # Idioma por defecto
+
+exclude_from_localization: 
+  - "assets"
+  - "images"
+  - "public"
+  - "sitemap.xml" # Polyglot generates language-specific sitemaps
+  - "feed.xml"
+parallel_localization: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
