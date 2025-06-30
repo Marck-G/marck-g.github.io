@@ -54,6 +54,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-github-metadata
+  # - jekyll-postcss
 
 languages: ["en", "es"]     # Idiomas que quieres soportar
 default_lang: "en"          # Idioma por defecto
@@ -74,13 +75,15 @@ parallel_localization: true
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
 #   - Gemfile
 #   - Gemfile.lock
-#   - node_modules/
+  - node_modules/
+  - source.css
+  - styles
 #   - vendor/bundle/
 #   - vendor/cache/
 #   - vendor/gems/
