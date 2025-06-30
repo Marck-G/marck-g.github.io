@@ -447,7 +447,7 @@ mvn clean install exec:java -Dexec.mainClass="com.example.app.MyJavaApp"
 </code></pre>
 
 <p class="mb-4">Debería ver una salida similar a esta:</p>
-<pre class="bg-gray-800 text-white p-3 rounded text-sm overflow-x-auto mt-2"><code>Biblioteca Rust cargada exitosamente desde: /path/to/my-rust-library/target/release/libmy_rust_library.so
+<pre ><code class="language-bash bg-gray-800 text-white p-3 rounded text-sm overflow-x-auto mt-2">Biblioteca Rust cargada exitosamente desde: /path/to/my-rust-library/target/release/libmy_rust_library.so
 Recibido de Rust: ¡Hola, Alice desde Rust!</code></pre>
 
 <p class="mb-4">¡Felicidades! Ha creado con éxito su primera biblioteca nativa con Rust y la ha invocado desde Java usando J4RS. Este ejemplo demuestra el flujo básico, pero J4RS es capaz de mucho más, incluido el manejo de estructuras de datos complejas y llamadas bidireccionales.</p>

@@ -456,7 +456,7 @@ mvn clean install exec:java -Dexec.mainClass="com.example.app.MyJavaApp"
 </code></pre>
 
 <p class="mb-4">You should see output similar to this:</p>
-<pre class="bg-gray-800 text-white p-3 rounded text-sm overflow-x-auto mt-2"><code>Rust library loaded successfully from: /path/to/my-rust-library/target/release/libmy_rust_library.so
+<pre class=""><code class="language-bash bg-gray-800 text-white p-3 rounded text-sm overflow-x-auto mt-2">Rust library loaded successfully from: /path/to/my-rust-library/target/release/libmy_rust_library.so
 Received from Rust: Hello, Alice from Rust!</code></pre>
 
 <p class="mb-4">Congratulations! You have successfully built your first native library with Rust and invoked it from Java using J4RS. This example demonstrates the basic flow, but J4RS is capable of much more, including handling complex data structures and bi-directional calls.</p>
