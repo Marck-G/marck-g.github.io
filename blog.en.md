@@ -1,7 +1,8 @@
 ---
 layout: blog
 title: Blog
-<!-- permalink: /blog/ -->
+permalink: /blog/
+page_id: blog
 lang: en
 ---
 
