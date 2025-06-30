@@ -53,7 +53,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
-  - github-pages
 
 languages: ["en", "es"]     # Idiomas que quieres soportar
 default_lang: "en"          # Idioma por defecto
