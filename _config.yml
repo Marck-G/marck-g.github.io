@@ -82,12 +82,13 @@ exclude:
 #   - Gemfile
 #   - Gemfile.lock
   - node_modules/
+  - _sass
   - source.css
   - styles
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
 author:
   name: Marck D. Carrión Guzmán
   specialty: Java Senior Developer
