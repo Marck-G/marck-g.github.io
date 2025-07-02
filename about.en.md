@@ -1,7 +1,7 @@
 ---
 layout: main
 title: About Me
-# permalink: /about/
+permalink: /about/
 page_id: about
 lang: en
 ---
