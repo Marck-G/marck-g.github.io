@@ -1,44 +1,290 @@
 @import "tailwindcss";
 
+/* Fira Code Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+
+/* Custom CSS Variables for Gray Color Scheme */
+:root {
+  --font-mono:
+    "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Gray Color Palette */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* Shadow Variables */
+  --shadow-subtle:
+    0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 1px rgba(0, 0, 0, 0.03);
+  --shadow-medium:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-strong:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Typography with Monospace Font */
+html {
+  font-family: var(--font-mono);
+}
+
 h1 {
-    @apply text-4xl font-bold mb-4;
+  @apply text-4xl font-bold mb-4;
+  font-weight: 700;
 }
 
 h2 {
-    @apply text-3xl font-semibold mt-8 mb-4;
+  @apply text-3xl font-semibold mt-8 mb-4;
+  font-weight: 600;
 }
 
 h3 {
-    @apply text-2xl font-semibold mt-6 mb-3;
+  @apply text-2xl font-semibold mt-6 mb-3;
+  font-weight: 600;
 }
 
 h4 {
-    @apply text-xl font-semibold mt-6 mb-3;
+  @apply text-xl font-semibold mt-6 mb-3;
+  font-weight: 600;
 }
 
 h5 {
-    @apply text-lg font-bold mt-6 mb-3;
+  @apply text-lg font-bold mt-6 mb-3;
+  font-weight: 700;
 }
 
-
-/* Style for code blocks, if you have any in your layout */
-pre {
-    @apply bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto;
+p {
+  @apply leading-relaxed;
+  line-height: 1.8;
+  margin-bottom: 18pt;
+  font-weight: 400;
 }
 
+pre > code {
+  margin: 10pt 0;
+}
+@media print {
+  p {
+    margin-bottom: 18pt;
+    text-align: justify;
+    font-size: 12pt;
+  }
+  .card {
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+  .container-shadow {
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
+  .container {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    .card {
+      width: 100% !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+  }
+}
 code {
-    @apply bg-gray-100 px-1 rounded text-red-700 py-1;
-}
-pre code {
-    @apply bg-gray-800 text-white p-3 rounded text-sm overflow-x-auto mt-2
+  @apply bg-gray-100 dark:bg-gray-300 dark:text-gray-100 text-gray-900 px-2 py-1 rounded font-mono text-sm;
+  font-family: var(--font-mono);
 }
 
-/* Custom button styles to ensure consistency and visual appeal */
+/* Inline code styling */
+:not(pre) > code {
+  @apply bg-gray-200  border-red-100 dark:bg-gray-300 dark:text-gray-800 text-red-800 px-2 py-1 rounded font-mono text-sm;
+  font-family: var(--font-mono);
+}
+
+/* Custom button styles with gray theme */
 .button {
-    @apply inline-block px-6 py-3 rounded-full font-semibold text-lg transition duration-300 ease-in-out;
-    @apply bg-blue-600 text-white shadow-lg hover:bg-blue-700 hover:shadow-xl;
+  @apply inline-block px-6 py-3 rounded-lg font-medium text-base transition-all duration-200 ease-out;
+  @apply bg-gray-800 text-white shadow-md hover:shadow-lg hover:-translate-y-1;
+  @apply border border-gray-700;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  box-shadow: var(--shadow-medium);
+
+  &:hover {
+    @apply bg-gray-700 border-gray-600;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-strong);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-subtle);
+  }
 }
 
 .button.secondary {
-    @apply bg-gray-200 text-gray-800 hover:bg-gray-300;
+  @apply bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-200 border border-gray-300 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  box-shadow: var(--shadow-subtle);
+
+  &:hover {
+    @apply bg-gray-200 border-gray-400;
+    box-shadow: var(--shadow-medium);
+  }
+}
+
+/* Enhanced blog-specific styles */
+.blog-title {
+  @apply text-5xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.blog-subtitle {
+  @apply text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-normal;
+  font-family: var(--font-mono);
+  line-height: 1.6;
+}
+
+.post-meta {
+  @apply text-sm text-gray-500 dark:text-gray-400 mb-6 font-mono;
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+.post-content {
+  @apply text-gray-800 dark:text-gray-200 leading-relaxed;
+  font-family: var(--font-mono);
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+/* Category and tag styling */
+.category-badge,
+.tag-badge {
+  @apply inline-block px-3 py-1 rounded-full text-xs font-medium border border-gray-300 bg-gray-50 text-gray-700;
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.category-badge:hover,
+.tag-badge:hover {
+  @apply bg-gray-100 border-gray-400 text-gray-800;
+}
+
+/* Enhanced list styling */
+ul,
+ol {
+  @apply space-y-2 text-gray-700 dark:text-gray-300 list-disc ml-6;
+  font-family: var(--font-mono);
+  line-height: 1.8;
+  margin-bottom: 12pt;
+}
+
+li {
+  @apply font-mono space-y-2 pl-2;
+  font-weight: 400;
+}
+
+/* Blockquote styling */
+blockquote {
+  @apply border-l-4 border-gray-300 pl-4 py-2 my-4 bg-gray-50 text-gray-700 italic;
+  font-family: var(--font-mono);
+  font-style: italic;
+}
+
+/* Table styling */
+table {
+  @apply w-full border-collapse border border-gray-300 my-4;
+}
+hr {
+  @apply my-4 py-4;
+}
+th,
+td {
+  @apply border border-gray-300 p-3 text-gray-800 dark:text-gray-200 font-mono;
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+th {
+  @apply bg-gray-100 font-semibold text-gray-900;
+  font-weight: 600;
+}
+
+/* Link styling */
+a {
+  @apply hover:text-gray-300 underline decoration-gray-400 underline-offset-4;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  @apply text-gray-600 decoration-gray-200;
+}
+
+/* Enhanced shadow utilities */
+.shadow-subtle {
+  box-shadow: var(--shadow-subtle);
+}
+
+.shadow-medium {
+  box-shadow: var(--shadow-medium);
+}
+
+.shadow-strong {
+  box-shadow: var(--shadow-strong);
+}
+
+/* Container with subtle shadow */
+.container-shadow {
+  @apply bg-white dark:bg-gray-700 rounded-xl shadow-md border border-gray-200;
+  box-shadow: var(--shadow-medium);
+}
+
+/* Card styling */
+.card {
+  @apply bg-gray-100 dark:bg-gray-700 rounded-lg border dark:border-gray-700 border-gray-200 p-6 shadow-sm;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.2s ease;
+
+  &:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-1px);
+  }
+}
+
+/* Section headers */
+.section-header {
+  @apply text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b-2 border-gray-200 pb-2;
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+/* Read More button style (bordered, no background) */
+.read-more-btn {
+  @apply inline-flex items-center px-6 py-3 text-lg font-medium text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200 hover:border-gray-400 dark:hover:border-gray-500 hover:-translate-y-1;
+  font-family: var(--font-mono);
+  font-weight: 500;
+
+  &:hover {
+    @apply hover:bg-gray-100 dark:hover:bg-gray-700 border-gray-400 dark:border-gray-500;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tailwindcss -i _sass/source.scss -o assets/css/main.css",
     "start": "npm run build && JEKYLL_ENV=development bundle exec jekyll serve -P 8040",
-    "watch:css": "tailwindcss -i ./assets/css/source.css -o ./assets/css/main.css --watch"
+    "watch:css": "tailwindcss -i _sass/source.scss -o assets/css/main.css --watch"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,7 @@
     "cssnano": "^7.0.7",
     "postcss": "^8.5.6",
     "postcss-import": "^16.1.1",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "sass": "^1.69.5"
   }
 }

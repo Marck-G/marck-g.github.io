@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Marck G. 
+title: Marck D. Carrión
 email: marckcarrion@gmail.com
 domain: marckg.github.io
 description: >- # this means to ignore newlines until "baseurl:"
@@ -39,7 +39,6 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
 
-
 defaults:
   - scope:
       path: "assets/img"
@@ -56,10 +55,10 @@ plugins:
   - jekyll-github-metadata
   # - jekyll-postcss
 
-languages: ["en", "es"]     # Idiomas que quieres soportar
-default_lang: "en"          # Idioma por defecto
+languages: ["en", "es"] # Idiomas que quieres soportar
+default_lang: "en" # Idioma por defecto
 
-exclude_from_localization: 
+exclude_from_localization:
   - "assets"
   - "images"
   - "public"
@@ -76,11 +75,11 @@ parallel_localization: true
 # their entries' file path in the `include:` list.
 #
 exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
+  #   - .sass-cache/
+  #   - .jekyll-cache/
+  #   - gemfiles/
+  #   - Gemfile
+  #   - Gemfile.lock
   - node_modules/
   - _sass
   - source.css
@@ -111,6 +110,10 @@ skills:
     icon: fa-java
   - name: Git
     icon: fa-git
+  - name: Rust
+    icon: fa-rust
+  - name: Bash
+    icon: fa-terminal
 
 github_username: Marck-G # Replace with your GitHub username
 # twitter_username: yourtwitterhandle # Replace with your Twitter handle (optional)
